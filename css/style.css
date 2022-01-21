@@ -1,0 +1,263 @@
+* {
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family: 'Average Sans', sans-serif;
+    background-color: #decdf9;
+    overflow-x: hidden;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #decdf9;
+    background-color: #4d25a9;
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+}
+
+header div {
+    font-family: 'Rufina', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
+} 
+
+header div img {
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-right: 40px;
+}
+
+
+ul li a {
+    color: #decdf9;
+    text-decoration: none;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+ul li a:hover {
+    color: #6aabcb;
+}
+
+#hero {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/img/bgPictures.jpg);
+    background-position: center;
+    font-family: 'Rufina', sans-serif;
+    box-shadow: 1px 0 1px black;
+}    
+
+#hero h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #c52db4;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 0px 1px rgb(161, 157, 157);
+    text-transform: uppercase;
+}
+
+#hero input[type='email'] {
+    width: 100%;
+    padding: 10px; 
+}
+
+#hero input[type='submit'] {
+    
+    width: 100%;
+    height: 30px;
+    margin: 15px 13px;
+    border: 0;
+    background-color: #c52db4;
+    color: rgb(0, 0, 0);
+
+}
+
+#hero input[type='submit']:hover {
+    background-color: #4d25a9;
+    color: #ffffff;
+    transition: background-color, color 1s;
+}
+
+
+/* Abaut */
+#about  h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    text-transform: uppercase;
+    color: #030303;
+    text-shadow: 1px 0px 1px rgb(252, 252, 252);
+    font-size: 2em;
+}
+
+
+#about > iframe {
+    max-width: 560px;
+    width: 100%;
+    margin: 50px 33%;
+}
+
+/* footer */
+#footer {
+    height: 30px;
+    justify-content: center;
+    display: flex;
+    margin-top: 30px;
+    color: #decdf9;
+    background-color: rgb(75, 75, 75);
+    padding: 20px;
+}
+
+
+/* Hamburger Menu */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(237, 219, 255);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0.0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+/* Hamburger Menu Animation */
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Responsve Breakpoint */
+@media screen and (max-width: 1024px) {
+    header ul {
+        width: 50%;
+    }
+
+    #about > iframe {
+        max-width: 560px;
+        width: 100%;
+        margin: 50px 20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #4d25a9;
+        z-index: -2;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    header div {
+        z-index: -3;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1;
+    }
+
+    header ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #hero h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+        color: #c52db4;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-shadow: 1px 0px 1px rgb(161, 157, 157);
+        text-transform: uppercase;
+    }
+
+    #hero input[type='email'] {
+        width: 70%;
+        padding: 10px; 
+        margin-left: 50px;
+    }
+    
+    #hero input[type='submit'] {
+        
+        width: 70%;
+        height: 30px;
+        border: 0;
+        background-color: #c52db4;
+        color: rgb(0, 0, 0);
+        margin-left: 65px;
+    
+    }
+
+    #about > iframe {
+        max-width: 560px;
+        width: 80%;
+        margin: 30px 50px;
+    }
+    
+}

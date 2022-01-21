@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Musik Zone | FreeCodeCamp</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Average+Sans&family=Rufina:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header id="header">
+        <div><img src="img/logoMusic.png" alt="Lmz Logo" id="header-img"> L-Musik Zone
+        </div>
+            <nav id="nav-bar">
+                <ul class="">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">Abaut</a></li>
+                    <li ><a href="#footer" class="nav-link">Footer</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </header>
+
+    <section id="hero">
+        <h3>study with the best teacher and good mood.</h3>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Enter your email address"
+            required
+            />
+            <input id="submit" type="submit" value="Get Started" class="btn" />
+        </form>
+    </section>
+
+    <section id="about">
+        <h3>About</h3>
+        <iframe  id="video" width="560" height="315" src="https://www.youtube.com/embed/tfkrxdN7qhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+
+    <section id="footer">
+        <span>Copyright 2021 | L-Muusik Zone </span>
+    </section>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <!-- My Script -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('header ul');
+
+        menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('slide')
+        });
+    </script>
+</body>
+</html>
